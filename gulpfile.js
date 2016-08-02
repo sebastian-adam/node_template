@@ -79,7 +79,7 @@ gulp.task('jshint', function(){
 });
 
 // to run this: $ gulp serve // This task is used to start the development server
-gulp.task('serve', function() {
+gulp.task('serve', ['build'], function() {
   browserSync.init({
     server: {
       baseDir: "./",

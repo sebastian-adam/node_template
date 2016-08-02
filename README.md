@@ -3,9 +3,6 @@ Theme: Seti-UI
 Packages: linter-jshint
 
 
-
-
-
 <!-- ENVIRONMENT SETUP -->
 
 $ brew install node <!-- only needs to be done once -->

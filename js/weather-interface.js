@@ -1,39 +1,3 @@
-var Constructor = require('./../js/other-template.js').constructorModule;
-
-
-$(document).ready(function() {
-  $('#generic-form').submit(function(event) {
-    event.preventDefault();
-
-  });
-});
-
-var Constructor = require('./../js/template.js').constructorModule;
-
-
-$(document).ready(function() {
-  $('#generic-form').submit(function(event) {
-    event.preventDefault();
-
-  });
-});
-
-// Eventually move to time.js
-var datetime = null,
-        date = null;
-
-var update = function () {
-    date = moment(new Date());
-    datetime.html(date.format('dddd, MMMM Do YYYY, h:mm:ss a'));
-};
-
-
-$(document).ready(function(){
-  datetime = $('#time');
-  update();
-  setInterval(update, 1000);
-});
-
 var apiKey = require('./../.env').apiKey;
 
 $(document).ready(function() {

@@ -89,7 +89,10 @@ gulp.task('serve', function() {
   // This is for automatic reloading
   gulp.watch(['js/*.js'], ['jsBuild']);
   gulp.watch(['bower.json'], ['bowerBuild']);
+  gulp.watch(['*.html'], ['htmlBuild']);
 });
+
+//All of the following tasks run automatically when server is running
 
 // to run this: $ gulp jsBuild
 gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
@@ -98,5 +101,10 @@ gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
 
 // to run this: $ gulp bowerBuild
 gulp.task('bowerBuild', ['bower'], function(){
+  browserSync.reload();
+});
+
+// to run this: $ gulp htmlBuild
+gulp.task('htmlBuild', function() {
   browserSync.reload();
 });

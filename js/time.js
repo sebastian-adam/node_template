@@ -1,10 +1,10 @@
-function Clock(datetime, date, time) {
-  this.datetime = null;
+function Clock() {
   this.date = null;
   this.time = null;
+  this.alarm = null;
 }
 
-Clock.prototype.update = function() {
+Clock.prototype.updateTime = function() {
   this.date = moment(new Date());
   dateObject = this.date.toObject();
   if (dateObject.minutes < 10) {
@@ -12,13 +12,12 @@ Clock.prototype.update = function() {
   } else {
     this.time = dateObject.hours + ":" + dateObject.minutes;
   }
-  var datetime = $('#time');
-  datetime.html(this.date.format("dddd, MMMM Do YYYY, h:mm:ss a"));
 };
 
-Clock.prototype.alarmClock = function(alarmInput) {
-  if (this.time === alarmInput) {
+Clock.prototype.alarmClock = function() {
+  if (this.time === this.alarm) {
     document.getElementById('alarm-wav').play();
+    setInterval(this.update, 1000);
   }
 };
 

@@ -28,7 +28,7 @@ $(document).ready(function(){
   }, 1000);
   $('#alarm-button').click(function() {
     MyClock.alarm = $('#alarm-input').val();
-    $('#clock').append('<h3>Alarm set for <strong>' + MyClock.alarm + '</strong></h3>');
+    $('#alarm-time').text('Alarm set for ' + MyClock.alarm);
     MyClock.alarmClock();
   });
 });
